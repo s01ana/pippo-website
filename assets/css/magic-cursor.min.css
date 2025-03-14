@@ -1,0 +1,147 @@
+/* UniCore Magic Cursor */
+.uc-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  contain: layout style size;
+  pointer-events: none;
+  will-change: transform;
+  transition: opacity .3s,color .4s
+}
+
+.uc-cursor::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  display: block;
+  width: 48px;
+  height: 48px;
+  transform: scale(0);
+  background: currentColor;
+  border-radius: 50%;
+  transition: transform .3s ease-in-out,opacity .1s
+}
+
+.uc-cursor-text {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0) rotate(10deg);
+  opacity: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -.01em;
+  transition: opacity .4s,transform .3s
+}
+
+@supports (mix-blend-mode: exclusion) {
+  .uc-cursor.exclusion,.uc-cursor.opaque {
+      mix-blend-mode:exclusion
+  }
+
+  .uc-cursor.exclusion::before,.uc-cursor.opaque::before {
+      background: #fff
+  }
+}
+
+.uc-cursor.normal,.uc-cursor.text {
+  mix-blend-mode: normal
+}
+
+.uc-cursor.inverse-text .uc-cursor-text {
+  color: #000
+}
+
+.uc-cursor.normal::before,.uc-cursor.text::before {
+  background: currentColor
+}
+
+.uc-cursor.inverse {
+  color: #fff
+}
+
+.uc-cursor.transparent {
+  color: transparent
+}
+
+.uc-cursor.difference {
+  mix-blend-mode: difference
+}
+
+.uc-cursor.visible::before {
+  transform: scale(.2)
+}
+
+.uc-cursor.visible.active::before {
+  transform: scale(.23);
+  transition-duration: .2s
+}
+
+.uc-cursor.default::before {
+  opacity: .15;
+  transform: scale(1.5)
+}
+
+.uc-cursor.default.active::before {
+  opacity: .2;
+  transform: scale(1.3)
+}
+
+.uc-cursor.pointer::before {
+  transform: scale(.15)
+}
+
+.uc-cursor.text::before {
+  transform: scale(1.7)
+}
+
+.uc-cursor.text .uc-cursor-text {
+  opacity: 1;
+  transform: scale(1)
+}
+
+.uc-cursor.text.active::before {
+  transform: scale(1.6);
+  transition-duration: .2s
+}
+
+.uc-cursor.opaque::before {
+  transform: scale(1.32)
+}
+
+.uc-cursor.opaque.active::before {
+  transform: scale(1.2)
+}
+
+.uc-cursor.xs::before {
+  transform: scale(.3)
+}
+
+.uc-cursor.sm::before {
+  transform: scale(.75)
+}
+
+.uc-cursor.md::before {
+  transform: scale(1.25)
+}
+
+.uc-cursor.lg::before {
+  transform: scale(1.75)
+}
+
+.uc-cursor.xl::before {
+  transform: scale(2.25)
+}
+
+.uc-cursor.hidden::before {
+  transform: scale(0)
+}
