@@ -3611,6 +3611,15 @@ textarea.form-control {
 .bottom-50 {
   bottom: 50%!important
 }
+.bottom-60 {
+  bottom: 60%!important
+}
+.bottom-70 {
+  bottom: 70%!important
+}
+.bottom-80 {
+  bottom: 80%!important
+}
 
 .start-0 {
   left: 0!important
@@ -3778,6 +3787,10 @@ textarea.form-control {
 
 .h-100px {
   height: 100px!important
+}
+
+.h-250px {
+  height: 250px!important
 }
 
 .h-1\/2 {
@@ -4780,6 +4793,10 @@ textarea.form-control {
   .xl\:h-150px {
       height: 150px!important
   }
+
+  .xl\:h-400px {
+    height: 400px!important
+}
 
   .xl\:mx-4 {
       margin-right: 2rem!important;
